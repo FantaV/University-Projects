@@ -1,3 +1,2 @@
-//
-// Created by Carlo Villoresi on 02/02/25.
-//
+// in C++ la classe diventa astratta quando vengono definiti metodi VIRTUAL
+
