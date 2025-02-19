@@ -1,0 +1,10 @@
+package crivello.eratostene;
+
+public class CrivelloEratostene {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,55 @@
+public class CrivelloEratostene {
+    public static void main(String[] args) {
+        // Creiamo un oggetto per trovare i numeri primi
+        Crivello crivello = new Crivello(50);
+        
+        // Calcoliamo i numeri primi
+        crivello.trovaNumeriPrimi();
+        
+        // Stampiamo i numeri primi
+        crivello.stampaNumeriPrimi();
+    }
+}
+
+class Crivello {
+    int limite; // Numero massimo
+    boolean[] numeri; // Array per sapere quali sono primi
+
+    // Costruttore
+    Crivello(int limite) {
+        this.limite = limite;
+        numeri = new boolean[limite + 1];
+    }
+
+    // Metodo per trovare i numeri primi
+    void trovaNumeriPrimi() {
+        // Inizializziamo tutti i numeri come veri
+        for (int i = 0; i <= limite; i++) {
+            numeri[i] = true;
+        }
+
+        // 0 e 1 non sono primi
+        numeri[0] = false;
+        numeri[1] = false;
+
+        // Calcolo dei numeri primi
+        for (int i = 2; i <= limite; i++) {
+            if (numeri[i]) {
+                for (int j = i * 2; j <= limite; j += i) {
+                    numeri[j] = false;
+                }
+            }
+        }
+    }
+
+    // Metodo per stampare i numeri primi
+    void stampaNumeriPrimi() {
+        System.out.println("Numeri primi fino a " + limite + ":");
+        for (int i = 2; i <= limite; i++) {
+            if (numeri[i]) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println(); // Aggiunge una nuova riga alla fine
+    }
+}

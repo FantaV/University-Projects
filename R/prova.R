@@ -1,0 +1,17 @@
+# Carichiamo la libreria ggplot2
+library(ggplot2)
+
+# Creiamo un dataset con 1000 numeri casuali (distribuzione normale)
+set.seed(123)  # Per riprodurre sempre gli stessi numeri
+dati <- data.frame(valori = rnorm(1000, mean = 50, sd = 10))
+
+# Istogramma con 10 bin
+ggplot(dati, aes(x = valori)) +
+  geom_histogram(bins = 10, fill = "blue", color = "black") +
+  ggtitle("Istogramma con 10 bin")
+
+# Istogramma con 30 bin
+ggplot(dati, aes(x = valori)) +
+  geom_histogram(bins = 30, fill = "red", color = "black") +
+  ggtitle("Istogramma con 30 bin")
+
